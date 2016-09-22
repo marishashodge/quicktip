@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var numberOfPeople: UISegmentedControl!
+    @IBOutlet weak var splitLabel: UILabel!
     
     let animated = true
     let defaults = UserDefaults.standard
@@ -39,9 +41,19 @@ class ViewController: UIViewController {
     
     @IBAction func calculateTip(_ sender: AnyObject) {
         let tipPercentages = [0.18, 0.20, 0.22]
+        let numPeople = [1, 2, 3, 4]
         let bill = Double(billField.text!) ?? 0
-        let tip = bill * tipPercentages[tipController.selectedSegmentIndex]
-        let total = bill + tip
+        var total = Double(0)
+        let tip = Double((bill * tipPercentages[tipController.selectedSegmentIndex]))/Double(numPeople[numberOfPeople.selectedSegmentIndex])
+        if numberOfPeople.selectedSegmentIndex != 0 {
+            let splitNum = Double(bill) / Double(numPeople[numberOfPeople.selectedSegmentIndex])
+            splitLabel.text = String(format: "$%.2f", splitNum)
+            total = splitNum + tip
+        } else {
+            splitLabel.text = ""
+            total = bill + tip
+        }
+
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
