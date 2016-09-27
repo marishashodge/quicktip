@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tipController: UISegmentedControl!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var saveMsg: UILabel!
+    @IBOutlet weak var defaultTipLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
     
     let tipPercentages = [0.18, 0.20, 0.22]
     let defaults = UserDefaults.standard
@@ -21,6 +23,8 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         print("view will appear")
         tipController.selectedSegmentIndex = defaults.integer(forKey: "defaultTip")
+        defaultTipLabel?.font = UIFont(name: "Helvetica Neue", size: 23)
+        saveButton.layer.cornerRadius = 5
     }
     
     override func viewDidLoad() {

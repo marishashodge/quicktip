@@ -12,13 +12,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tipController: UISegmentedControl!
     @IBOutlet weak var billField: UITextField!
-    @IBOutlet weak var tipLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var numberOfPeople: UISegmentedControl!
-    @IBOutlet weak var splitLabel: UILabel!
-    @IBOutlet weak var totalName: UILabel!
-    @IBOutlet weak var tipName: UILabel!
-    
+    @IBOutlet weak var tipEquation: UITextField!
+    @IBOutlet weak var equalSignLabel: UITextField!
+    @IBOutlet weak var plusField: UITextField!
+    @IBOutlet weak var totalField: UITextField!
     let animated = true
     let defaults = UserDefaults.standard
     
@@ -29,7 +27,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //self.view.backgroundColor = UIColor.blue
+        //self.billField?.borderStyle = UITextBorderStyle.roundedRect
+        billField?.placeholder = "$"
+        billField?.becomeFirstResponder()
+        billField?.font = UIFont(name: "Helvetica Neue", size: 50)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
     @IBAction func onTap(_ sender: AnyObject) {
         view.endEditing(true)
     }
-    
+
     @IBAction func calculateTip(_ sender: AnyObject) {
         
         var numberFormatter = NumberFormatter()
@@ -55,24 +57,28 @@ class ViewController: UIViewController {
         
         if numberOfPeople.selectedSegmentIndex != 0 {
             let splitNum = Double(bill) / Double(numPeople[numberOfPeople.selectedSegmentIndex])
-            let splitNumNS =  numberFormatter.string(from: NSNumber(floatLiteral: splitNum))!
-            splitLabel.text = String(splitNumNS)
-            tipName.text = "Tip per person"
-            totalName.text = "Total per person"
 
             total = splitNum + tip
         } else {
-            splitLabel.text = ""
-            tipName.text = "Tip"
-            totalName.text = "Total"
             total = bill + tip
         }
 
         let tipNS = numberFormatter.string(from: NSNumber(floatLiteral: tip))!
         let totalNS = numberFormatter.string(from: NSNumber(floatLiteral: total))!
         
-        tipLabel.text = String(tipNS)
-        totalLabel.text = String(totalNS)
+        //tipLabel.text = String(tipNS)
+        //totalLabel.text = String(totalNS)
+        plusField?.text = " + "
+        plusField?.font = UIFont(name: "Helvetica Neue", size: 35)
+        
+        tipEquation.text = String(tipNS)
+        tipEquation?.font = UIFont(name: "Helvetica Neue", size: 35)
+        equalSignLabel?.text = " = "
+        equalSignLabel?.font = UIFont(name: "Helvetica Neue", size: 35)
+        
+        totalField.text = String(totalNS)
+        totalField?.font = UIFont(name: "Helvetica Neue", size: 50)
+        
     }
 
 }

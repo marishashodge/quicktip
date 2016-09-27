@@ -15,6 +15,7 @@
 		63C59A901D8F0A8800585AD2 /* quicktipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C59A8F1D8F0A8800585AD2 /* quicktipTests.swift */; };
 		63C59A9B1D8F0A8900585AD2 /* quicktipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C59A9A1D8F0A8900585AD2 /* quicktipUITests.swift */; };
 		63C59AAD1D91015300585AD2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C59AAC1D91015300585AD2 /* SettingsViewController.swift */; };
+		63F450C91D9A410A00A21688 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 63F450C81D9A410A00A21688 /* person.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		63C59A9A1D8F0A8900585AD2 /* quicktipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quicktipUITests.swift; sourceTree = "<group>"; };
 		63C59A9C1D8F0A8900585AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C59AAC1D91015300585AD2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		63F450C81D9A410A00A21688 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person.png; path = ../../Downloads/person.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		63C59A6E1D8F0A8800585AD2 = {
 			isa = PBXGroup;
 			children = (
+				63F450C11D9A37CC00A21688 /* Resources */,
 				63C59AAC1D91015300585AD2 /* SettingsViewController.swift */,
 				63C59A791D8F0A8800585AD2 /* quicktip */,
 				63C59A8E1D8F0A8800585AD2 /* quicktipTests */,
@@ -126,6 +129,14 @@
 				63C59A9C1D8F0A8900585AD2 /* Info.plist */,
 			);
 			path = quicktipUITests;
+			sourceTree = "<group>";
+		};
+		63F450C11D9A37CC00A21688 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				63F450C81D9A410A00A21688 /* person.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				63C59A851D8F0A8800585AD2 /* LaunchScreen.storyboard in Resources */,
 				63C59A821D8F0A8800585AD2 /* Assets.xcassets in Resources */,
 				63C59A801D8F0A8800585AD2 /* Main.storyboard in Resources */,
+				63F450C91D9A410A00A21688 /* person.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +528,7 @@
 				63C59AA11D8F0A8900585AD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63C59AA21D8F0A8900585AD2 /* Build configuration list for PBXNativeTarget "quicktipTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +537,7 @@
 				63C59AA41D8F0A8900585AD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63C59AA51D8F0A8900585AD2 /* Build configuration list for PBXNativeTarget "quicktipUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +546,7 @@
 				63C59AA71D8F0A8900585AD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
